@@ -159,6 +159,7 @@ public:
                 c->MakeCoffee(g, w, h, hs);
             }
             std::cout << "Order done." << std::endl;
+            std::cout << "Thank you, come again!" << std::endl;
             return true;
         }
         std::cout << "You ordered " << n << " cups of coffee." << std::endl;
@@ -171,10 +172,14 @@ public:
 int main() {
 
     CoffeeMaker cm;
-    cm.requestCoffee(2);
-    cm.requestCoffee(6);
-    cm.requestCoffee(1);
+    int n = 0;
+    bool isVaild = false;
 
-    
+    while(!isVaild){
+        std::cout << "Enter the number of coffee you want to get. (number only)" << std::endl;
+        std::cin >> n;
+        isVaild = cm.requestCoffee(n);
+    }
+
     return 0;
 }
